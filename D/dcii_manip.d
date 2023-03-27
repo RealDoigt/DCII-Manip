@@ -1,6 +1,6 @@
 module dcii_manip;
 
-auto compareCaseSensitive(ref ubyte[] left, ref ubyte[] right)
+auto compare(ref ubyte[] left, ref ubyte[] right)
 {
     if (left.length != right.length) return false;
     
@@ -10,7 +10,7 @@ auto compareCaseSensitive(ref ubyte[] left, ref ubyte[] right)
     return true;
 }
 
-auto compareCaseSensitive(ubyte* left, ubyte* right, size_t leftLength, size_t rightLength)
+auto compareCase(ubyte* left, ubyte* right, size_t leftLength, size_t rightLength)
 {
     if (leftLength != rightLength) return false;
     
@@ -20,7 +20,7 @@ auto compareCaseSensitive(ubyte* left, ubyte* right, size_t leftLength, size_t r
     return true;
 }
 
-auto compareCaseSensitive(ubyte* left, ubyte* right)
+auto compare(ubyte* left, ubyte* right)
 {
     for (size_t i; left[i] != 0 && right[i] != 0; ++i)
         if (left[i] != right[i]) return false;

@@ -21,6 +21,6 @@
 #define false (bool)0
 #endif
 
-bool compare_csstr(uchar* left, uchar* right, size_t leftLength, size_t rightLength);
-bool compare_ntcsstr(uchar* left, uchar* right);
+bool compare_str(uchar* left, uchar* right, size_t leftLength, size_t rightLength);
+bool compare_ntstr(uchar* left, uchar* right);
 #endif
