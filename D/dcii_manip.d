@@ -9,3 +9,14 @@ auto compareCaseSensitive(ref ubyte[] left, ref ubyte[] right)
         
     return true;
 }
+
+auto compareCaseSensitive(ubyte* left, ubyte* right, size_t leftLength, size_t rightLength)
+{
+    if (leftLength != rightLength) return false;
+    
+    for(size_t i; i < leftLength; ++i)
+        if (left[i] != right[i]) return false;
+    
+    return true;
+}
+
