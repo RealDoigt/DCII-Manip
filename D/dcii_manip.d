@@ -1,5 +1,17 @@
 module dcii_manip;
 
+enum isUpperCase(ubyte character) = character == 2;
+
+auto toLowerCase(ref ubyte[] str)
+{
+    ubyte[] result;
+    
+    foreach (c; str) 
+        if (!isUpperCase!c) result ~= c;
+        
+    return result;
+}
+
 auto compare(ref ubyte[] left, ref ubyte[] right)
 {
     if (left.length != right.length) return false;
